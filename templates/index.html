@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salary Prediction</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Predict Your Annual Salary</h1>
+    <form id="salary-form">
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" required>
+
+      <label for="gender">Gender:</label>
+      <select id="gender" name="gender">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select>
+
+      <label for="education">Education Level:</label>
+      <select id="education" name="education">
+        <option value="High School">High School</option>
+        <option value="Bachelor's">Bachelor's</option>
+        <option value="Master's">Master's</option>
+        <option value="PhD">PhD</option>
+      </select>
+
+      <label for="experience">Years of Experience:</label>
+      <input type="number" id="experience" name="experience" required>
+
+      <label for="job_role">Job Role:</label>
+      <input type="text" id="job_role" name="job_role" placeholder="e.g., Software Engineer, Sales Associate" required>
+
+      <label for="location">Location:</label>
+      <input type="text" id="location" name="location" placeholder="e.g., Delhi, Bangalore, Mumbai" required>
+
+      <button type="button" onclick="predictSalary()">Predict Salary</button>
+    </form>
+    <div id="result" class="result"></div>
+  </div>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
